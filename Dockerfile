@@ -12,4 +12,6 @@ RUN python3 ./setup.py install
 WORKDIR /
 
 RUN pip install influxdb
+
+EXPOSE 8023
 CMD [ "python", "./apiscraper.py" ]

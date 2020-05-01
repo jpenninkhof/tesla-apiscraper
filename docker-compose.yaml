@@ -1,0 +1,11 @@
+  tesla-apiscraper:
+    container_name: tesla-apiscraper
+    image: jpenninkhof/tesla-apiscraper
+    restart: on-failure:5
+    volumes:
+       - /home/$USER/docker/tesla-apiscraper/config.py:/tesla-apiscraper/config.py
+       - /home/$USER/docker/tesla-apiscraper/apiscraper.log:/tesla-apiscraper/apiscraper.log
+    ports: 
+      - 8023:8023
+    depends_on:
+      - influxdb
